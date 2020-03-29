@@ -1,6 +1,7 @@
-const request = require('request');
+const request = require('request'),
+url = 'https://xkcd.com/info.0.json' ;
 
-request('https://xkcd.com/info.0.json', (err, res) => {
+request(url, (err, res) => {
     if (err) { return console.log(err); }
-    console.log(res.body);
+    console.log(JSON.parse(res.body).img);
 });
