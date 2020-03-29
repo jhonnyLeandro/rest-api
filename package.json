@@ -4,7 +4,8 @@
   "description": "node.js api test",
   "main": "index.js",
   "scripts": {
-    "start": "node src/module_examples/start.js"
+    "start": "node src/module_examples/start.js",
+    "object": "node src/object_examples/object.js"
   },
   "repository": {
     "type": "git",
