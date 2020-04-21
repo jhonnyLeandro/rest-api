@@ -1,14 +1,14 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+const Pool = require('pg').Pool
+const pool = new Pool ({user:'leandro', host:'localhost', database: 'api_node', password: 'meloescobar', port:'5432'});
 const port = 3000;
 const app = express();
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
-
 let users = [];
+
 let user = {
     name: "",
     lastname:""
@@ -32,7 +32,12 @@ app.get('/', (req, res) => {
 
 // get to obtain all the users
 app.get('/users',(req, res) => {
-    res.send(users);
+    pool.query('SELECT * FROM Users ORDER BY id ASC', (error, results) => {
+        if (error) {
+            throw error
+        }
+        res.status(200).json(results.rows)
+    });
 })
 
 // get to obtain a specific user
