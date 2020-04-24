@@ -1,5 +1,6 @@
 # Rest api with node.js and postgreSQL
-This project is created for learning purposes
+
+This project was been created and it is updated for learning purposes about rest apis connected to database.
 
 ## Steps for postgresql
 
