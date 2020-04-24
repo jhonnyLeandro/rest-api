@@ -1,8 +1,7 @@
-# Rest Api test project
+# Simple rest api with node.js and postgresql
+This project is created for learning purposes
 
-Simple User Rest Api
+## Steps for postgresql
 
-## Install postgreSQL
-
-To get the db working the first step is to download and install postgresql, after that create
-a specific role to this api, in that role create the database in the tables.
+To get the db working, the first step is to download and install postgresql, after that create
+a specific role for this api, in that role create the database and into the database create the table users used to this project.
