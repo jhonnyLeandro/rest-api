@@ -1,117 +1,26 @@
-const express = require("express");
-const bodyParser = require('body-parser');
-const Pool = require('pg').Pool
-const pool = new Pool ({user:'leandro', host:'localhost', database: 'api_node', password: 'meloescobar', port:'5432'});
-const port = 3000;
-const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+const user = require('./user');
+const app = require('./configapp');
 
-let users = [];
-
-let user = {
-    name: "",
-    lastname:""
-};
-
-let response = {
-    error: false,
-    code: 200,
-    message: ''
-};
-
-// get to answer to the root
+//root
 app.get('/', (req, res) => {
-    response = {
-        error: true,
-        code: 200,
-        message: 'Punto de inicio'
-    };
-    res.send(response);
+    res.send({code:200,message:'root'});
 });
 
 // get to obtain all the users
-app.get('/users',(req, res) => {
-    pool.query('SELECT * FROM Users ORDER BY id ASC', (error, results) => {
-        if (error) {
-            throw error
-        }
-        res.status(200).json(results.rows)
-    });
-})
+app.get('/users',user.getUsers)
 
 // get to obtain a specific user
-app.get('/user/:index', (req, res) => {
-    
-    let index = req.params.index;
-    if (index >= users.length){
-        res.send({"error":"There isn't user with specified index"})
-    }
-    res.send(users[index]);
-});
+app.get('/user/:id',user.getUserById);
 
 //post to add a user
-app.post('/user', (req, res) => {
-    if(!req.body.name || !req.body.lastname) {
-        res.send ({"error": "name and last name fields required"});
-    } else {
+app.post('/user',user.postUser);
 
-        user = {
-            name: req.body.name,
-            lastname: req.body.lastname
-        };
+//modify user
+app.put('/user/:id',user.updateUser);
 
-        users.push (user);
-
-        response = {
-            error: false,
-            code: 200,
-            message: 'user created',
-            response: users
-        };
-    } 
-    res.send(response);
-});
-
-app.put('/user/:index', (req, res) => {
-    if (!req.body.name || !req.body.lastname) {
-        res.send ({"error": "name and last name fields required"});
-    } else {
-        let index = req.params.index;
-        if (index >= users.length) {
-            res.send({"error":"There isn't user with specified index"})
-        }
-        users[index].name = req.body.name;
-        users[index].lastname = req.body.lastname;
-    }
-
-    res.send({"message":"Operation completed successfully"});
-});
-
-
-app.delete ('/user/:index', (req, res) => {
-    let index = req.params.index;
-    if (index >= users.length) {
-        res.send ({"error":"There isn't user with specified index"});
-    }
-    delete users[index];
-    res.send(response);
-});
+//delete user
+app.delete ('/user/:id',user.deleteUser);
 
 app.use(function(req, res, next) {
-    rsp = {
-        error: true, 
-        code: 404, 
-        message: 'URL not found'
-    };
-    res.status(404).send(response);
-});
-
-app.listen(port, () => {
-    console.log("Server initialized, listening port 3000");
+    res.status(404).send({code:404,message:'URL not found'});
 });
