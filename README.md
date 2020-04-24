@@ -1,4 +1,4 @@
-# Rest api with node.js and postgresql
+# Rest api with node.js and postgreSQL
 This project is created for learning purposes
 
 ## Steps for postgresql
