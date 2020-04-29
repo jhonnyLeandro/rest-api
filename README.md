@@ -2,21 +2,21 @@
 
 This project was created and it is being updated for learning purposes about rest apis, database, cloud, devops.
 
-## Steps for postgreSQL
+## Get going postgreSQL
 
 To get the db working, the first step is to download and install postgresql, after that create
 a specific role for this api. Now with our role we can create our database and our tables. I will describe the steps below.
-## Install postgresql in ubuntu
+### Install postgresql in ubuntu
 
 Use this command to  install postgresql in ubuntu
 
 `sudo apt install postgresql-12`
 
-## log into psql client for postgresql
+### Log into psql with postgres user
 
 `sudo -u postgres psql`
 
-### log in like an specific user to a database
+### Log into psql with a specific user and database
 
 `psql -U user -d database -h 127.0.0.1 -W`
 
