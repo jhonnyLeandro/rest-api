@@ -21,8 +21,23 @@ sudo -u postgres psql
 
 psql -U <user> -d <database> -h 127.0.0.1 -W
 
+## Test the api
+
+we are going to use the tool curl to test the functionality of the api
+
+### Get
+
+`curl http://localhost:3000/users`
+
+### Post
+
+`curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user`
 
 
-## test the api with curl
+### Put
 
-curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
+`curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X PUT  http://localhost:3000/user/id`
+
+### Delete
+
+`curl  -X DELETE  http://localhost:3000/user/1`
