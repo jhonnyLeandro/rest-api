@@ -11,18 +11,16 @@ a specific role for this api, in that role create the database and into the data
 
 use this command to  install postgresql in ubuntu
 
-sudo apt install postgresql-12
+`sudo apt install postgresql-12`
 
 ## log into psql client for postgresql
 
-sudo -u postgres psql
+`sudo -u postgres psql`
 
-## log in like an specific user to a database
+### log in like an specific user to a database
 
-psql -U <user> -d <database> -h 127.0.0.1 -W
+`psql -U user -d database -h 127.0.0.1 -W`
 
+### test the api with curl
 
-
-## test the api with curl
-
-curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user
+`curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user`
