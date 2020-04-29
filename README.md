@@ -5,8 +5,7 @@ This project was created and it is being updated for learning purposes about res
 ## Steps for postgreSQL
 
 To get the db working, the first step is to download and install postgresql, after that create
-a specific role for this api, in that role create the database and into the database create the table users used to this project.
-
+a specific role for this api. Now with our role we can create our database and our tables. I will describe the steps below.
 ## Install postgresql in ubuntu
 
 Use this command to  install postgresql in ubuntu
@@ -46,4 +45,4 @@ We are going to use the tool curl to test the functionality of the api
 
 # References
 
-[Setting up a restful api with nodejs and postgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
+- [Setting up a restful api with nodejs and postgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
