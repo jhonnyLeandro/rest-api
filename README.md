@@ -9,7 +9,7 @@ a specific role for this api, in that role create the database and into the data
 
 ## Install postgresql in ubuntu
 
-use this command to  install postgresql in ubuntu
+Use this command to  install postgresql in ubuntu
 
 `sudo apt install postgresql-12`
 
@@ -24,7 +24,7 @@ use this command to  install postgresql in ubuntu
 
 ## Test the api
 
-we are going to use the tool curl to test the functionality of the api
+We are going to use the tool curl to test the functionality of the api
 
 ### Get
 
@@ -43,3 +43,7 @@ we are going to use the tool curl to test the functionality of the api
 
 `curl  -X DELETE  http://localhost:3000/user/1`
 
+
+# References
+
+[Setting up a restful api with nodejs and postgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
