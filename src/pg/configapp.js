@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const port = 3000;
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
 
 
 app.listen(port, () => {
-    console.log("Server initialized, listening port 3000");
+    console.log(`Server initialized, listening port ${ process.env.PORT || 3000 }`);
 });
 
 module.exports = app;
