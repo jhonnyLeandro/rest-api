@@ -42,7 +42,8 @@ We are going to use the tool curl to test the functionality of the api
 
 `curl  -X DELETE  http://localhost:3000/user/1`
 
-
 # References
 
 - [Setting up a restful api with nodejs and postgreSQL](https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/)
+- [rest api with sequelize and express](https://www.youtube.com/watch?v=sA3t4d1v7OI)
+
