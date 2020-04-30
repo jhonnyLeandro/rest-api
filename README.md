@@ -43,3 +43,5 @@ we are going to use the tool curl to test the functionality of the api
 
 `curl  -X DELETE  http://localhost:3000/user/1`
 
+
+[rest api with sequelize and express](https://www.youtube.com/watch?v=sA3t4d1v7OI)
