@@ -3,7 +3,7 @@ import morgan from 'morgan';
 
 // importing routes
 import userRoutes from './routes/users';
-import requestRoutes from './routes/requests';
+import expensesRoutes from './routes/expenses';
 
 // initialize app
 const app = express();
@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(json());
 
 // adding routes
-app.use(userRoutes);
-app.use(requestRoutes);
+app.use('/users', userRoutes);
+app.use('/expenses', expensesRoutes);
 
 export default app;
