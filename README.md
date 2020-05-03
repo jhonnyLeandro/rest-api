@@ -28,19 +28,21 @@ We are going to use the tool curl to test the functionality of the api
 ### Get
 
 `curl http://localhost:3000/users`
-
+`curl http://localhost:3000/users/get/6`
 ### Post
 
 `curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X POST http://localhost:3000/user`
-
+`curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X POST http://localhost:3000/users/post`
 
 ### Put
 
 `curl -d '{"firstName":"name", "lastName":"lastname"}' -H "Content-Type: application/json" -X PUT  http://localhost:3000/user/id`
+`curl -d '{"firstName":"pedro", "lastName":"picapiedra"}' -H "Content-Type: application/json" -X PUT  http://localhost:3000/users/put/id`
 
 ### Delete
 
 `curl  -X DELETE  http://localhost:3000/user/1`
+`curl  -X DELETE  http://localhost:3000/users/delete/6`
 
 # References
 

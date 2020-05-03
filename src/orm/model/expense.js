@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize'
-import connection from '../sequalizeconnection';
+import connection from '../connection';
 import User from './user';
 
 const Model = Sequelize.Model;
