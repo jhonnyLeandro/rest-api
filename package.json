@@ -4,10 +4,11 @@
   "description": "node.js api test",
   "main": "index.js",
   "scripts": {
+    "dev:pg": "nodemon -r dotenv/config src/pg/service.js",
     "service": "node -r dotenv/config src/pg/service.js",
     "build:orm": "babel src/orm --out-dir dist",
     "start:orm": "node -r dotenv/config dist/orm/service.js",
-    "dev:orm": "nodemon src/orm/service.js --exec babel-node"
+    "dev:orm": "nodemon -r dotenv/config src/orm/service.js --exec babel-node"
   },
   "repository": {
     "type": "git",
