@@ -13,7 +13,7 @@ app.use(function(req, res, next) {
 
 
 app.listen(port, () => {
-    console.log(`Server initialized, listening port ${ process.env.PORT || 3000 }`);
+    console.log(`Server initialized, listening port ${ port }`);
 });
 
 module.exports = app;
