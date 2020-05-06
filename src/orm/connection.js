@@ -5,9 +5,10 @@ import createUser from './model/user';
 let db = process.env.DB;
 let user = process.env.USR;
 let password = process.env.PASSWORD;
+let host = process.env.HOST;
 
 const sequelize = new Sequelize(db, user, password, {
-  host: 'localhost',
+  host: host,
   dialect:  'postgres',
   pool: {
     max: 5,
@@ -19,8 +20,8 @@ const sequelize = new Sequelize(db, user, password, {
 
 const database = {}
 
-database.sequelise = sequelize;
+database.sequelize = sequelize;
 database.user = createUser(sequelize);
-
+database.sequelize.sync();
 export default database;
 
