@@ -46,6 +46,7 @@ We are going to use the tool curl to test the functionality of the api
 
 ## How to create a postgresql database in AWS EC2
 
+**command to connect to an extern host** 
 `ssh -i key namevm@host`
 
 # References
